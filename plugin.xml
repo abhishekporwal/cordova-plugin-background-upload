@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-background-upload" version="1.0.9">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-background-upload" version="1.0.16">
     <name>Cordova Background Upload Plugin</name>
     <description>Background Upload plugin for Cordova</description>
     <license>ISC</license>
@@ -9,8 +9,8 @@
     </js-module>
    
     <platform name="android">
-        <framework src="net.gotev:uploadservice:3.2.3" />
-        <framework src="net.gotev:uploadservice-okhttp:3.2.3" />
+        <framework src="net.gotev:uploadservice:3.4.2" />
+        <framework src="net.gotev:uploadservice-okhttp:3.4.2" />
         <framework src="com.sromku:simple-storage:1.2.0" />
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="FileTransferBackground">
@@ -55,7 +55,4 @@
         <source-file src="src/ios/FileUploadManager.m" />
        
     </platform>
-
-  
-
 </plugin>

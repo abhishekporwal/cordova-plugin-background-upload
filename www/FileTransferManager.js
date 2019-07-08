@@ -84,11 +84,16 @@ FileTransferManager.prototype.startUpload = function (payload) {
         return;
     }
 
+
     if (!payload.filePath) {
-        this.options.fail({
-            error: "filePath is required"
-        });
-        return;
+        if (payload.file){
+            payload.filePath = payload.file;
+        }else{
+            this.options.fail({
+                error: "filePath is required"
+            });
+            return;
+        }
     }
 
      if (!payload.id) {
@@ -100,6 +105,10 @@ FileTransferManager.prototype.startUpload = function (payload) {
 
     if (!payload.fileKey) {
         payload.fileKey = "file";
+    }
+
+    if (payload.showNotification == null) {
+        payload.showNotification = true;
     }
 
     if (!this.options) {
